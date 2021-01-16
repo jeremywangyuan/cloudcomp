@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base1.html" %} {% block content %}
 
 <h2>Malware Classifier</h2>
 
@@ -23,9 +23,37 @@
     <div class="loader" style="display:none;"></div>
 
     <h3 id="result">
-        <span> </span>
+        <span> Result:  $({{xdatas[0]}}) </span>
     </h3>
 
 </div>
+
+<div id="chartmain" style="width:600px; height: 400px;"></div>
+<script type="text/javascript">
+
+    var option = {
+        title:{
+            text:'Top 5 Probability '
+        },
+        tooltip:{},
+        legend:{
+            data:['Category']
+        },
+        xAxis:{
+            data:'{{xdatas}}'
+        },
+        yAxis:{
+
+        },
+        series:[{
+            name:'count',
+            type:'bar',
+            data:'{{ydatas}}'
+        }]
+    };
+    var myChart = echarts.init(document.getElementById('chartmain'));
+
+    myChart.setOption(option);
+</script>
 
 {% endblock %}

@@ -1,0 +1,156 @@
+{% extends "base1.html" %} {% block content %}
+
+<h2>Malware Classifier</h2>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Choose...
+        </label>
+        <input type="file" name="image" id="imageUpload" accept="*">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+</div>
+
+
+
+<div id="chartmain" style="width:1000px; height: 400px;"></div>
+<script type="text/javascript">
+    var option = {
+            title:{
+                text:'Top 5 Probability'
+            },
+            tooltip:{},
+            legend:{
+                data:['Probability %']
+            },
+            xAxis:{
+                data:'asdda'
+            },
+            yAxis:{
+    
+            },
+            series:[{
+                name:'Probability %',
+                type:'bar',
+                data:[0.2,0.7,0.1,0.05,0]
+            }]
+        };
+        var myChart = echarts.init(document.getElementById('chartmain'));
+    
+    myChart.setOption(option);
+    
+</script>
+
+
+
+
+
+<div id='Ramnit'> 
+    <h3><Ramnit</h3>
+
+    <p>Ramnit is a Computer worm affecting Windows users. 
+        It was estimated that it infected 800 000 Windows PCs between September and December 2011. 
+        The Ramnit botnet was dismantled by Europol and Symantec in 2015. At its peak in 2015, Ramnit was estimated to have infected 3,200,000 PCs. 
+        Ramnit infects removable media such as USB drives and also hides itself within the master boot record.
+        As soon as it infects a computer, it copies itself to all attached and removable drives.
+         It is also searches and infects files with the extensions .exe, .dll, .htm and .html.</p>
+</div>
+
+<div id='Vundo'> 
+    <h3><Vundo</h3>
+
+    <p>A Vundo infection is typically caused either by opening an e-mail attachment carrying the trojan, or through a variety of browser exploits, including vulnerabilities in popular browser plug-ins, such as Java. Many of the popups advertise fraudulent programs such as AntiSpywareMaster, WinFixer, and AntiVirus 2009.
+
+        Virtumonde.dll consists of two main components, Browser Helper Objects and Class ID. Each of these components is in the Windows Registry under HKEY LOCAL MACHINE, and the file names are dynamic. It attaches to the system using bogus Browser Helper Objects and DLL files attached to winlogon.exe, explorer.exe and more recently, lsass.exe.
+        
+        Vundo inserts registry entries to suppress Windows warnings about the disabling of firewall, antivirus, and the Automatic Updates service, disables the Automatic Updates service and quickly re-disables it if manually re-enabled, and attacks Malwarebytes' Anti-Malware, Spybot Search & Destroy, Lavasoft Ad-Aware, HijackThis, and several other malware removal tools. It frequently hides itself from Vundofix and Combofix. Rather than pushing fake antivirus products, the new "ad" popups for the drive by download attacks are copies of ads by major corporations, faked so that simply closing them allows the drive-by download exploit to insert the payload into the user's computer.</p>
+</div>
+
+<div id='botnet'> 
+    <h3><Kelihos_botnet</h3>
+
+    <p>The Kelihos botnet was first discovered around December 2010. Researchers originally suspected having found a new version of either the Storm or Waledac botnet, 
+        due to similarities in the modus operandi and source code of the bot, but analysis of the botnet showed it was instead a new, 45,000-infected-computer-strong, 
+        botnet that was capable of sending an estimated 4 billion spam messages a day. 
+        In September 2011 Microsoft took down the botnet in an operation codenamed "Operation b79". 
+        At the same time, Microsoft filed civil charges against Dominique Alexander Piatti, dotFREE Group SRO and 22 John Doe defendants for suspected involvement in the botnet for issuing 3,700 subdomains that were used by the botnet.
+        These charges were later dropped when Microsoft determined that the named defendants did not intentionally aid the botnet controllers.</p>
+</div>
+
+<div id='Lollipop'> 
+    <h3><Lollipop</h3>
+
+    <p>
+        "Lollipop.exe", identified in Microsoft's Threat Encyclopedia as "Adware:Win32/Lollipop" and by Symantec as "Trojan.Gen.2", is adware by Lollipop Network, S.L., in Barcelona, Spain, a "primary distributor" of unwanted software, advertised as a "performance based contextual advertising network" aimed at Europe and Latin America. It is typically bundled with the PlayerPlus application on video streaming websites and installs without user consent under the profile folder as "C:\Users\\AppData\Local\Lollipop\Lollipop.exe". It has three different ways of setting itself to start at Windows boot depending on the OS and antivirus in use. It transmits data to a remote server identifying the computer's geographical location and security software. The ads it presents vary based on location and browsed keywords and may be pornographic. It can be removed via the Control Panel; removing all entries containing "Lollipop" is advised.
+    </p>
+</div>
+
+<div id='Simda'> 
+    <h3><Simda</h3>
+
+    <p>
+        SIMDA is a family of backdoors capable of stealing information such as user names, passwords, and certificates. It steals information via its keylogging and HTML injection routines. It also executes backdoor commands, compromising the security of the infected systems. 
+    </p>
+</div>
+
+
+<div id='Tracur'> 
+    <h3><Tracur</h3>
+
+    <p>
+        TRACUR is a family of worms that redirects user's browsing to advertisements which allows malware authors to earn. It installs browser components and monitors web browser activity in order to display relevant popups.
+
+        TRACUR variants can also download and execute other malware into the affected system.
+
+        In 2010, TRACUR variants were spotted to be the final payload in a vulnerability exploit that involved .MOV files and a certain feature in the video player application Quicktime.
+    
+    </p>
+</div>
+
+
+<div id='Obfuscator'> 
+    <h3><Obfuscator</h3>
+
+    <p>
+        In software development, obfuscation is the deliberate act of creating source or machine code that is difficult for humans to understand. Like obfuscation in natural language, it may use needlessly roundabout expressions to compose statements. Programmers may deliberately obfuscate code to conceal its purpose (security through obscurity) or its logic or implicit values embedded in it, primarily, in order to prevent tampering, deter reverse engineering, or even to create a puzzle or recreational challenge for someone reading the source code. This can be done manually or by using an automated tool, the latter being the preferred technique in industry.
+    
+    </p>
+</div>
+
+
+
+<div id='Gatak'> 
+    <h3><Gatak</h3>
+
+    <p>
+        Windows Defender detects and removes this threat.
+
+        This trojan gathers information about your PC and sends it to a hacker.
+
+        It can arrive on your PC as part of a key generator application, or by appearing to be an update for a legitimate application.
+    
+    </p>
+</div>
+
+
+
+
+
+{% endblock %}

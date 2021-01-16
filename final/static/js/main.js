@@ -9,9 +9,9 @@ $(document).ready(function () {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
-                $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                //$('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
                 $('#imagePreview').hide();
-                $('#imagePreview').fadeIn(650);
+                //$('#imagePreview').fadeIn(650);
             }
             reader.readAsDataURL(input.files[0]);
         }
@@ -21,6 +21,7 @@ $(document).ready(function () {
         $('#btn-predict').show();
         $('#result').text('');
         $('#result').hide();
+	    $('#imagePreview').hide();
         readURL(this);
     });
 
@@ -43,9 +44,18 @@ $(document).ready(function () {
             async: true,
             success: function (data) {
                 // Get and display the result
-                $('.loader').hide();
+		console.log(data);
+		var infos = data.substr(data.indexOf(' ')+1);
+		var urls = data.substr(0, data.indexOf(' '));
+		console.log(infos);
+		    console.log(urls);
+		$('.loader').hide();
                 $('#result').fadeIn(600);
-                $('#result').text(' Result:  ' + data);
+                $('#result').text(' Result:  ' + infos);
+	//$('.image-section').show()
+		 $('#imagePreview').css('background-image', 'url(' + urls+ ')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
                 console.log('Success!');
             },
         });
