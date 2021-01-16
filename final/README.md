@@ -1,3 +1,3 @@
 # Final project 
-## Flask App with malware image classification by transfer learning using pyspark
+## Flask App with malware classification by transfer learning using PySpark
 
